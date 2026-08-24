@@ -5,7 +5,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import ru.netology.statsview.R
 import ru.netology.statsview.databinding.ActivityAppBinding
 
 class AppActivity : AppCompatActivity() {
@@ -14,18 +13,18 @@ class AppActivity : AppCompatActivity() {
         enableEdgeToEdge()
         val binding = ActivityAppBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-
-        binding.stats.data = listOf(
-            450F,
+        val view = binding.stats
+        view.data = listOf(
             500F,
             500F,
-            400F,
+            500F,
+            500F,
         )
     }
 }
