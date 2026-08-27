@@ -12,8 +12,9 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_gravity="center"
-        app:lineWidth="20dp"
+        app:animationType="sequential"
+        app:colors="@array/colors"
         app:fontSize="50dp"
-        app:colors="@array/colors"/>
+        app:lineWidth="20dp" />
 
 </FrameLayout>
